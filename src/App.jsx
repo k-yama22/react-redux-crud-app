@@ -1,23 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-
-const TodosList = (props) => {
-  const { profiles } = props;
-  console.log(props);
-  return (
-    <div>
-      <ul>
-        {profiles.map((prop, index) => {
-          return (
-            <li key={index}>
-              {prop.name}と申します。{prop.age}歳です
-            </li>
-          );
-        })}
-      </ul>
-    </div>
-  );
-};
+import { TodoList } from "./components/TodoList";
 
 const App = () => {
   const onClickPlus = () => {
@@ -50,7 +33,7 @@ const App = () => {
           return <TodosList name={profile.name} age={profile.age} />;
         })}
       </div> */}
-      <TodosList profiles={profiles} />
+      <TodoList profiles={profiles} />
       <h1>Hello World</h1>
       <div>{dom}</div>
       <input type="text" onChange={onChangeText} value={text} />
@@ -63,7 +46,7 @@ const App = () => {
     </>
   );
 };
-TodosList.propTypes = {
+TodoList.propTypes = {
   profiles: PropTypes.arrayOf(
     PropTypes.exact({
       name: PropTypes.string,
