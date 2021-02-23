@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { TodoList } from "./components/TodoList";
+import { TodoList } from "./TodoList";
 
 const App = () => {
   const onClickPlus = () => {
